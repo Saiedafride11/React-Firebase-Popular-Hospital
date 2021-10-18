@@ -1,0 +1,22 @@
+.login-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-icon{
+	height: 60px;
+    width: 60px;
+    line-height: 60px;
+    border: 1px solid grey;
+    font-size: 22px;
+	margin-right: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+.social-icon:hover{
+	background-color: #1976d2;
+	color: #fff;
+}
+.social-icon:last-child{
+	margin-right: 0 !important;
+}
