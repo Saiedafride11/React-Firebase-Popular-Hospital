@@ -11,6 +11,9 @@ const DoctorsSummery = (props) => {
     const handleDoctorClick = () => {
         history.push(`/doctor/${id}`)
     }
+    const handleBookClick = () => {
+        history.push(`/booking/${id}`)
+    }
     return (
         <div>
             <div className="row row-cols-1 g-4 p-2">
@@ -31,11 +34,7 @@ const DoctorsSummery = (props) => {
                         <div className="hover-box">
                         <ul>
                             <li><button onClick={handleDoctorClick} className="btn btn-primary w-100 mb-2">View Profile</button></li>
-                            <li>
-                                <Link to="/booking">
-                                    <button className="btn btn-primary w-100">Book Now</button>
-                                </Link>
-                            </li>
+                            <li><button onClick={handleBookClick} className="btn btn-primary w-100">Book Now</button></li>
                         </ul>
                         </div>
                     </div>

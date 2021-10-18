@@ -5,8 +5,9 @@ import Header from './pages/Shared/Header/Header';
 import Footer from './pages/Shared/Footer/Footer';
 import NotFound from './pages/NotFound/NotFound';
 import AllDoctors from './pages/Home/AllDoctors/AllDoctors';
-import Booking from './pages/Booking/Booking';
 import DoctorDetails from './pages/Home/DoctorDetails/DoctorDetails';
+import Booking from './pages/Home/../Booking/Booking';
+import Clinic from './pages/Home/Clinic/Clinic';
 
 function App() {
   return (
@@ -26,8 +27,11 @@ function App() {
               <Route path="/doctor/:doctorId">
                   <DoctorDetails></DoctorDetails>
               </Route>
-              <Route path="/booking">
+              <Route path="/booking/:bookingId">
                   <Booking></Booking>
+              </Route>
+              <Route path="/clinic">
+                  <Clinic></Clinic>
               </Route>
               <Route path="*">
                   <NotFound></NotFound>

@@ -1,0 +1,14 @@
+.blog-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card-text{
+    margin-bottom: 5px !important;
+    color: grey;
+}
+.doctor-summery{
+    position: relative;
+    /* margin: 10px; */
+}
+

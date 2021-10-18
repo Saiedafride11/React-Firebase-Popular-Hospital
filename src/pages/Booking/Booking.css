@@ -1,0 +1,19 @@
+.booking-details{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+        rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    /* padding: 20px 0px; */
+}
+.booking-details p{
+    margin-bottom: 0px;
+}
+.booking-date, .booking-time{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}

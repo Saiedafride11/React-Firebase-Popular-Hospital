@@ -37,7 +37,6 @@ const Features = () => {
                             <h5 className="card-title">{feature.title}</h5>
                             <p className="card-text">{feature.description}</p>
                             <Link to={`${feature.path}`} className="text-decoration-underline">
-                                {/* <button className="btn btn-primary w-100 mt-2">Book Now</button> */}
                                 Book Now
                             </Link>
                         </div>
