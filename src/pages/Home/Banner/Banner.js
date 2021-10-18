@@ -4,7 +4,7 @@ import img from '../../../images/doctor.png';
 
 const Banner = () => {
     return (
-        <div className="banner">
+        <div className="banner" id="home">
             <div className="container">
                 <div className="banner-inner">
                     <div className="d-flex align-items-center">

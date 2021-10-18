@@ -7,7 +7,7 @@ import useData from '../../../hooks/useData';
 const Doctors = () => {
    const [doctors] = useData();
     return (
-        <div className="py-5" style={{backgroundColor: '#F9FAFE'}}>
+        <div className="py-5" style={{backgroundColor: '#F9FAFE'}} id="doctors">
             <div className="container">
                 <h2 className="text-center py-2">Our Specialities</h2>
                 <div className="doctors-container">

@@ -3,7 +3,7 @@ import './Booking.css';
 import { useParams } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserMd, faStar, faThumbsUp} from '@fortawesome/free-solid-svg-icons'
-import useData from '../../hooks/useData';
+import useData from '../../../hooks/useData';
 
 const Booking = () => {
     const {bookingId} = useParams();

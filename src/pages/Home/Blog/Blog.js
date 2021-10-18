@@ -40,7 +40,7 @@ const Blog = () => {
         }
     ]
     return (
-        <div className="py-5">
+        <div className="py-5" id="blog">
             <div className="container">
                 <h2 className="text-center py-2">Blogs and News</h2>
                 <div className="blog-container">
@@ -73,11 +73,6 @@ const Blog = () => {
                         </div>
                     </div>)
                     }
-                </div>
-                <div className="text-center mt-2">
-                    {/* <Link to="/doctors">
-                        <button className="btn btn-primary w-25">All Doctors</button>
-                    </Link> */}
                 </div>
             </div>
         </div>
