@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Doctors.css';
 import DoctorsSummery from '../DoctorsSummery/DoctorsSummery';
 import { Link } from 'react-router-dom';
+import useData from '../../../hooks/useData';
 
 const Doctors = () => {
-    const [doctors, setDoctors] = useState([]);
-    useEffect( () => {
-        fetch('./health.json')
-        .then(data => data.json())
-        .then(data => setDoctors(data))
-    }, [])
+   const [doctors] = useData();
     return (
         <div className="py-5" style={{backgroundColor: '#F9FAFE'}}>
             <div className="container">
