@@ -11,13 +11,16 @@ const Doctors = () => {
             <div className="container">
                 <h2 className="text-center py-2">Our Specialities</h2>
                 <div className="doctors-container">
-                    {
+                    {   
+                        doctors?.length === 0 ?
+                        <h2 style={{textAlign: 'center', color: '#1976d2', marginTop: '50px'}}>Loading...</h2>
+                        :
                         doctors?.slice(0, 4).map(doctor => <DoctorsSummery doctor={doctor} key={doctor.id}></DoctorsSummery>)
                     }
                 </div>
                 <div className="text-center mt-2">
                     <Link to="/doctors">
-                        <button className="btn btn-primary w-25">All Doctors</button>
+                        <button className="btn btn-primary doctors-btn">All Doctors</button>
                     </Link>
                 </div>
             </div>

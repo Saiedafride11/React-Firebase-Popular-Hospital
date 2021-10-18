@@ -25,7 +25,7 @@ const Blog = () => {
         {   
             "img": "https://i.ibb.co/QYx3b3F/blog-02.jpg",
             "title": "Benefits of consulting with an Online Doctor",
-            "description": "Beauty, and more. Practical fitness tips and The journalism-based fitness.",
+            "description": "Beauty, and more. Practical fitness tips and The walk blog journalism-based fitness walk blog.",
             "doctor_img": "https://i.ibb.co/wsTYw5v/doctor-05.jpg",
             "doctor_name": "Dr. Iker Martin",
             "time": "6 oct 2021"
@@ -33,7 +33,7 @@ const Blog = () => {
         {   
             "img": "https://i.ibb.co/B2YKH4r/blog-01.jpg",
             "title": "5 Great reasons to use an Online Doctor",
-            "description": "Fitness experts, practical fitness tips, and videos to walk blog readers through workouts.",
+            "description": "Fitness experts, practical fitness tips, and videos to walk blog readers through workouts walk blog.",
             "doctor_img": "https://i.ibb.co/mcS6HKH/Waist-up-portrait-of-beautiful-African-American-nurse-posing-confidently-while-standing-with-arms-cr.jpg",
             "doctor_name": "Dr. Emilie Knight",
             "time": "8 oct 2021"
@@ -44,7 +44,10 @@ const Blog = () => {
             <div className="container">
                 <h2 className="text-center py-2">Blogs and News</h2>
                 <div className="blog-container">
-                    {
+                    {   
+                        blogs?.length === 0 ?
+                        <h2 style={{textAlign: 'center', color: '#1976d2', marginTop: '50px'}}>Loading...</h2>
+                        :
                         blogs?.map(blog =>  <div className="row row-cols-1 g-4 p-2" key={blog.time}>
                         <div className="col">
                             <div className="card h-100 pb-3">
@@ -58,14 +61,14 @@ const Blog = () => {
                                 </div>
                                 <div className="d-flex justify-content-between">
                                     <div className="d-flex align-items-center" style={{width: '65%'}}>
-                                        <div className="w-25">
-                                            <img src={blog.doctor_img} className="w-100 m-1 rounded-circle" style={{height: '42px'}} alt="" />
+                                        <div className="w-25 small-img">
+                                            <img src={blog.doctor_img} className="m-1 rounded-circle" alt="" />
                                         </div>
                                         &nbsp;&nbsp;
                                         <p style={{marginBottom: '0px', fontSize: '14px'}}>{blog.doctor_name}</p>
                                     </div>
                                     <div className="d-flex align-items-center" style={{width: '35%'}}>
-                                        <FontAwesomeIcon icon={faClock} /> &nbsp;
+                                        <FontAwesomeIcon icon={faClock} style={{color: '#1976d2'}}/> &nbsp;
                                         <p style={{marginBottom: '0px', fontSize: '14px'}}>{blog.time}</p>
                                     </div>
                                 </div>

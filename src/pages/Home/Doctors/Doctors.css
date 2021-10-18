@@ -2,3 +2,27 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
+.doctors-btn{
+    width: 25%;
+}
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    .doctors-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (min-width: 767px) and (max-width:992px) {
+    .doctors-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (min-width: 320px) and (max-width:767px) {
+    .doctors-container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .doctors-btn{
+        width: 100%;
+    }
+}

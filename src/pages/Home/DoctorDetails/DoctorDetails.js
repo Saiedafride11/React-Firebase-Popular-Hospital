@@ -1,41 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import './DoctorDetails.css';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useData from '../../../hooks/useData';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserMd, faStar, faThumbsUp} from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { faUserMd, faStar, faThumbsUp, faDotCircle} from '@fortawesome/free-solid-svg-icons'
 
 const DoctorDetails = () => {
     const {doctorId} = useParams();
     const [doctors] = useData();
     const [carts, setCart] = useState();
+    const history = useHistory();
 
     useEffect(() => {
       const newDoctors = doctors?.filter((doctor) => doctor.id === doctorId);
       setCart(newDoctors);
     }, [doctors]);
+
+    const handleBookClick = () => {
+        history.push(`/booking/${doctorId}`)
+    }
     return (
-        <div className="container">
-            {
+        <div className="container py-5">
+            {   
+                carts?.length === 0 ?
+                <h2 style={{textAlign: 'center', color: '#1976d2', marginTop: '50px'}}>Loading...</h2>
+                :
                 carts?.map(cart => <div key={cart.id}>
                     <div className="doctor-details">
-                        <div className="w-25">
+                        <div>
                             <img src={cart.img} className="w-100" alt="" />
                         </div>
-                        <div className="mx-5">
-                            <h6><strong>{cart.degree}</strong></h6>
+                        <div className="m-5">
+                            <h6><small><strong>{cart.degree}</strong></small></h6>
                             <h6><FontAwesomeIcon icon={faUserMd} /> {cart.title}</h6>
-                            <p><strong>Gender: </strong>{cart.gender}</p>
-                            <p><FontAwesomeIcon className="text-warning" icon={faStar} />   {cart.star} ({cart.review} Total)</p>
-                        </div>
-                        <div>
-                            <p><strong><FontAwesomeIcon icon={faThumbsUp} /> </strong>{cart.like}</p>
-                            <p><strong>Location: </strong>{cart.location}</p>
-                            <p><strong>Visit: </strong>{cart.visit}</p>
-                            <Link to="/booking">
-                                <button className="btn btn-primary w-100">Book Now</button> 
-                            </Link> 
+                            <p className="card-text"><strong>Gender: </strong>{cart.gender}</p>
+                            <p className="card-text"><FontAwesomeIcon className="text-warning" icon={faStar} />   {cart.star} ({cart.review} Total)</p>
+                            <p className="card-text"><strong><FontAwesomeIcon icon={faThumbsUp} /> </strong>{cart.like}</p>
+                            <p className="card-text"><strong>Location: </strong>{cart.location}</p>
+                            <p className="card-text"><strong>Visit: </strong>{cart.visit}</p>
+                            <small className="text-muted"><FontAwesomeIcon icon={faDotCircle} className="text-success"/>  {cart.active}</small>
+                            <button onClick={handleBookClick} className="btn btn-primary w-100">Book Now</button> 
                         </div>
                      </div>
                 </div>

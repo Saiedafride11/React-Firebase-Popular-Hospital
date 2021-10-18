@@ -6,23 +6,26 @@ import { Link } from 'react-router-dom';
 
 const Features = () => {
     const features = [
-        {
+        {   
+            "id": "01",
             "title": "Visit a Doctor",
             "description": "We hire the best specialists to deliver top-notch diagnostic services for you.",
             icon: faBed,
-            "path": "/booking"
+            "path": "/doctors"
         },
-        {
+        {   
+            "id": "02",
             "title": "Find a Pharmacy",
             "description": "We provide the a wide range of medical services, so every person could have the opportunity.",
             icon: faTablets,
-            "path": "/pharmacy"
+            "path": "/services"
         },
         {
+            "id": "03",
             "title": "Find a Lab",
             "description": "We use the first-class medical equipment for timely diagnostics of various diseases.",
             icon: faVials,
-            "path": "/lab"
+            "path": "/services"
         },
     ]
     return (
@@ -31,8 +34,8 @@ const Features = () => {
                 <h2 className="text-center py-2">Features</h2>
                 <div className="features-section">
                     {
-                        features?.map(feature => <div className="features-inner" key={feature.title}>
-                        <span><FontAwesomeIcon icon={feature.icon}/></span>
+                        features?.map(feature => <div className="features-inner" key={feature.id}>
+                        <span><FontAwesomeIcon icon={feature.icon} style={{color: '#1976d2'}}/></span>
                         <div className="card-body">
                             <h5 className="card-title">{feature.title}</h5>
                             <p className="card-text">{feature.description}</p>

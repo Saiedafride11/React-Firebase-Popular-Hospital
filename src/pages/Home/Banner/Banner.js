@@ -7,7 +7,7 @@ const Banner = () => {
         <div className="banner" id="home">
             <div className="container">
                 <div className="banner-inner">
-                    <div className="d-flex align-items-center">
+                    <div>
                         <div>
                             <h1 className="text-dark">Search Doctor,</h1>
                             <h1 className="text-dark">Make an Appointment</h1>
@@ -17,10 +17,10 @@ const Banner = () => {
                                 <br />
                                 <input className="w-100 p-2 mb-3 rounded-3" type="text" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc" />
                             </div>
-                            <button className="btn btn-primary w-50">Make Appointment</button>
+                            <button className="btn btn-primary">Make Appointment</button>
                         </div>
                     </div>
-                    <div>
+                    <div className="banner-right">
                         <img src={img} className="w-100" alt="" />
                     </div>
                 </div>

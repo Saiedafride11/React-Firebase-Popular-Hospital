@@ -3,6 +3,7 @@
     height: 100vh;
     background-color: #E5F1FB;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
@@ -14,4 +15,23 @@
 .banner-inner input{
     border: none;
     outline: none;
+}
+.banner button{
+    width: 50%;
+}
+
+@media only screen and (min-width: 320px) and (max-width:768px) {
+    .banner{
+        padding:50px 0px 700px;
+    }
+    .banner-inner{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .banner-right{
+        margin-top: 20px;
+    }
+    .banner button{
+        width: 100%;
+    }
 }

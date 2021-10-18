@@ -10,15 +10,13 @@ const AllDoctors = () => {
             <div className="container">
                 <h2 className="py-2">Total Specialities Available: {doctors.length}</h2>
                 <div className="all-doctors-container">
-                    {
+                    {   
+                        doctors?.length === 0 ?
+                        <h2 style={{textAlign: 'center', color: '#1976d2', marginTop: '50px'}}>Loading...</h2>
+                        :
                         doctors?.map(doctor => <AllDoctorsSummery doctor={doctor} key={doctor.id}></AllDoctorsSummery>)
                     }
                 </div>
-                {/* <div className="text-center mt-2">
-                    <Link to="/doctors">
-                        <button className="btn btn-primary w-25">All Doctors</button>
-                    </Link>
-                </div> */}
             </div>
         </div>
     );
