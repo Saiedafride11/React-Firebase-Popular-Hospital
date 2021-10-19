@@ -7,9 +7,9 @@ import useData from '../../../hooks/useData';
 const Doctors = () => {
    const [doctors] = useData();
     return (
-        <div className="py-5" style={{backgroundColor: '#F9FAFE'}} id="doctors">
+        <div className="py-5" style={{backgroundColor: '#F9FAFE'}}>
             <div className="container">
-                <h2 className="text-center py-2">Our Specialities</h2>
+                <h2 className="text-center py-2" style={{color: '#1976d2'}}>Our Specialities</h2>
                 <div className="doctors-container">
                     {   
                         doctors?.length === 0 ?
@@ -18,7 +18,7 @@ const Doctors = () => {
                         doctors?.slice(0, 4).map(doctor => <DoctorsSummery doctor={doctor} key={doctor.id}></DoctorsSummery>)
                     }
                 </div>
-                <div className="text-center mt-2">
+                <div className="text-center mt-3">
                     <Link to="/doctors">
                         <button className="btn btn-primary doctors-btn">All Doctors</button>
                     </Link>

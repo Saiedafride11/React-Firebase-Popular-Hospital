@@ -8,7 +8,7 @@ const Newsletter = () => {
             <div className="container">
                 <div className="newsletter">
                     <div>
-                        <h2>Grab Our Newsletter</h2>
+                        <h2 style={{color: '#1976d2'}}>Grab Our Newsletter</h2>
                         <p className="text-muted">To receive latest offers and discounts from the shop.</p>
                         <form className="row g-3">
                             <div className="col-auto">

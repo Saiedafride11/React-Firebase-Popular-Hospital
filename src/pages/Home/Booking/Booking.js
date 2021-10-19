@@ -45,19 +45,19 @@ const Booking = () => {
                      <div className="booking-date">
                          {
                              cart.dates?.map((item, index) => <div key={index}>
-                                    <div>
-                                        <button className="btn btn-primary m-2">{item.date}</button>
-                                    </div>
-                                </div>)
+                                <div>
+                                    <button className="btn btn-primary m-2">{item.date}</button>
+                                </div>
+                            </div>)
                          }
                      </div>
                      <div className="booking-time">
                          {
                              cart.times?.map((item, index) => <div key={index}>
-                                    <div>
-                                        <button className="btn btn-danger m-2">{item.time}</button>
-                                    </div>
-                                </div>)
+                                <div>
+                                    <button className="btn btn-danger m-2">{item.time}</button>
+                                </div>
+                            </div>)
                          }
                      </div>
                 </div>

@@ -10,12 +10,12 @@ const Banner = () => {
                     <div>
                         <div>
                             <h1 className="text-dark">Search Doctor,</h1>
-                            <h1 className="text-dark">Make an Appointment</h1>
+                            <h1 style={{color: '#1976d2'}}>Make an Appointment</h1>
                             <p className="text-muted">Discover the best doctors, clinic & hospital the city nearest to you.</p>
                             <div>
                                 <input className="w-100 p-2 mb-2 rounded-3" type="text" placeholder="Search Location" />
                                 <br />
-                                <input className="w-100 p-2 mb-3 rounded-3" type="text" placeholder="Search Doctors, Clinics, Hospitals, Diseases Etc" />
+                                <input className="w-100 p-2 mb-3 rounded-3" type="text" placeholder="Search Doctors, Clinics, Medicine, Diseases Etc" />
                             </div>
                             <button className="btn btn-primary">Make Appointment</button>
                         </div>
@@ -25,7 +25,7 @@ const Banner = () => {
                     </div>
                 </div>
             </div>
-    </div>
+        </div>
     );
 };
 

@@ -1,4 +1,7 @@
-import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged, signOut, FacebookAuthProvider, GithubAuthProvider, TwitterAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, onAuthStateChanged,
+          signOut, FacebookAuthProvider, GithubAuthProvider, TwitterAuthProvider,
+          createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification,
+          sendPasswordResetEmail, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../pages/Login/Firebase/firebase.init";
 
@@ -80,8 +83,7 @@ const useFirebase = () => {
       }
 
 // ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------------
-// ----------------------------------------------------------------------------
+      // Email and password verification
 // ----------------------------------------------------------------------------
 const handleToggleLogIn = (event) => {
     setIsLogIn(event.target.checked);
@@ -96,8 +98,8 @@ const handleToggleLogIn = (event) => {
     setPassword(event.target.value)
   }
   
+  // Submit email & password
   const handleSubmit = (event) => {
-    // event.preventDefault();
     if(password.length < 6){
       setError('Password Must be 6 characters long');
       setSuccessAccount('');
@@ -117,6 +119,7 @@ const handleToggleLogIn = (event) => {
     isLogIn ? processLogIn(email, password) : registerNewUser(email, password)
   }
   
+  // processLogIn
   const processLogIn = (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
     .then(result => {
@@ -129,6 +132,7 @@ const handleToggleLogIn = (event) => {
     })
   }
   
+  // registerNewUser
   const registerNewUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
     .then(result => {
@@ -139,19 +143,21 @@ const handleToggleLogIn = (event) => {
     })
   }
   
-  
+  // setUserName
   const setUserName = () => {
     updateProfile(auth.currentUser, {displayName: name})
     .then(result => {
     })
   }
   
+  // verifyEmail
   const verifyEmail = () => {
     sendEmailVerification(auth.currentUser)
     .then(result => {
     });
   }
   
+  // Reset Password
   const handleResetPassword = () => {
     sendPasswordResetEmail(auth, email)
     .then(result => {
@@ -168,13 +174,13 @@ const handleToggleLogIn = (event) => {
             SignInUsingFacebook,
             SignInUsingGithub,
             SignInUsingTwitter,
-            logOut,
             handleToggleLogIn,
             handleNameBlur,
             handleEmailBlur,
             handlePasswordBlur,
             handleSubmit,
-            handleResetPassword
+            handleResetPassword,
+            logOut
         }
 };
 

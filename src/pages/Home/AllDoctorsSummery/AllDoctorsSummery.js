@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 const AllDoctorsSummery = (props) => {
     const {name, degree, gender, star, review, location, visit, img, id} = props.doctor;
     const history = useHistory();
+    
     const handleDoctorClick = () => {
         history.push(`/doctor/${id}`)
     }

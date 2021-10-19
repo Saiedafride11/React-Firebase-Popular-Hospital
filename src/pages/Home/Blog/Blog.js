@@ -42,39 +42,39 @@ const Blog = () => {
     return (
         <div className="py-5" id="blog">
             <div className="container">
-                <h2 className="text-center py-2">Blogs and News</h2>
+                <h2 className="text-center py-2" style={{color: '#1976d2'}}>Blogs and News</h2>
                 <div className="blog-container">
                     {   
                         blogs?.length === 0 ?
                         <h2 style={{textAlign: 'center', color: '#1976d2', marginTop: '50px'}}>Loading...</h2>
                         :
-                        blogs?.map(blog =>  <div className="row row-cols-1 g-4 p-2" key={blog.time}>
-                        <div className="col">
-                            <div className="card h-100 pb-3">
-                                <img src={blog.img} className="card-img-top w-100" alt="..."/>
-                                <div className="card-body">
-                                    <h5 className="card-title">{blog.title}</h5>
-                                    <p className="card-text"><small>{blog.description}</small></p>
-                                    <Link to='/blog' className="text-decoration-underline">
-                                        Read More
-                                    </Link>
-                                </div>
-                                <div className="d-flex justify-content-between">
-                                    <div className="d-flex align-items-center" style={{width: '65%'}}>
-                                        <div className="w-25 small-img">
-                                            <img src={blog.doctor_img} className="m-1 rounded-circle" alt="" />
-                                        </div>
-                                        &nbsp;&nbsp;
-                                        <p style={{marginBottom: '0px', fontSize: '14px'}}>{blog.doctor_name}</p>
+                        blogs?.map(blog => <div className="row row-cols-1 g-4 p-2" key={blog.time}>
+                            <div className="col">
+                                <div className="card h-100 pb-3">
+                                    <img src={blog.img} className="card-img-top w-100" alt="..."/>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{blog.title}</h5>
+                                        <p className="card-text"><small>{blog.description}</small></p>
+                                        <Link to='/blogs' className="text-decoration-underline" style={{color: '#1976d2'}}>
+                                            Read More
+                                        </Link>
                                     </div>
-                                    <div className="d-flex align-items-center" style={{width: '35%'}}>
-                                        <FontAwesomeIcon icon={faClock} style={{color: '#1976d2'}}/> &nbsp;
-                                        <p style={{marginBottom: '0px', fontSize: '14px'}}>{blog.time}</p>
+                                    <div className="d-flex justify-content-between">
+                                        <div className="d-flex align-items-center" style={{width: '65%'}}>
+                                            <div className="w-25 small-img">
+                                                <img src={blog.doctor_img} className="m-1 rounded-circle" alt="" />
+                                            </div>
+                                            &nbsp;&nbsp;
+                                            <p style={{marginBottom: '0px', fontSize: '14px'}}>{blog.doctor_name}</p>
+                                        </div>
+                                        <div className="d-flex align-items-center" style={{width: '35%'}}>
+                                            <FontAwesomeIcon icon={faClock} style={{color: '#1976d2'}}/> &nbsp;
+                                            <p style={{marginBottom: '0px', fontSize: '14px'}}>{blog.time}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>)
+                        </div>)
                     }
                 </div>
             </div>

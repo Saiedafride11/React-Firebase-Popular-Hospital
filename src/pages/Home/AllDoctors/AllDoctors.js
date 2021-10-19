@@ -8,7 +8,7 @@ const AllDoctors = () => {
     return (
         <div className="py-5" style={{backgroundColor: '#F9FAFE'}}>
             <div className="container">
-                <h2 className="py-2">Total Specialities Available: {doctors.length}</h2>
+                <h2 className="py-2" style={{color: '#1976d2'}}>Total Specialities Available: {doctors.length}</h2>
                 <div className="all-doctors-container">
                     {   
                         doctors?.length === 0 ?

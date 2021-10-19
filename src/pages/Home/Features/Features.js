@@ -29,21 +29,21 @@ const Features = () => {
         },
     ]
     return (
-        <div className=" py-5">
+        <div className="py-5">
             <div className="container">
-                <h2 className="text-center py-2">Features</h2>
+                <h2 className="text-center py-2" style={{color: '#1976d2'}}>Features</h2>
                 <div className="features-section">
                     {
                         features?.map(feature => <div className="features-inner" key={feature.id}>
-                        <span><FontAwesomeIcon icon={feature.icon} style={{color: '#1976d2'}}/></span>
-                        <div className="card-body">
-                            <h5 className="card-title">{feature.title}</h5>
-                            <p className="card-text">{feature.description}</p>
-                            <Link to={`${feature.path}`} className="text-decoration-underline">
-                                Book Now
-                            </Link>
+                            <span><FontAwesomeIcon icon={feature.icon} style={{color: '#1976d2'}}/></span>
+                            <div className="card-body">
+                                <h5 className="card-title">{feature.title}</h5>
+                                <p className="card-text">{feature.description}</p>
+                                <Link to={`${feature.path}`} className="text-decoration-underline" style={{color: '#1976d2'}}>
+                                    Book Now
+                                </Link>
+                            </div>
                         </div>
-                    </div>
                     )}
                 </div>
             </div>

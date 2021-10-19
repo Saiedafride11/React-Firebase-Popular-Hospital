@@ -1,8 +1,8 @@
 import React from 'react';
 import Banner from '../Banner/Banner';
-import Blog from '../Blog/Blog';
-import Doctors from '../Doctors/Doctors';
 import Features from '../Features/Features';
+import Doctors from '../Doctors/Doctors';
+import Blog from '../Blog/Blog';
 import Newsletter from '../Newsletter/Newsletter';
 
 const Home = () => {
