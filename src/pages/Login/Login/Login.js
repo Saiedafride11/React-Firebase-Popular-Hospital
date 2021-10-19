@@ -50,17 +50,12 @@ const Login = () => {
             history.push(redirect_uri);
           })
     }
-    const handleEmailPasswordSubmit = (event) => {
-        event.preventDefault();
-        history.push(redirect_uri);
-        handleSubmit();
-    }
     return (
         <div className="container">
             <div className="login-container py-5">
                 <div className="">
                     <h3 style={{color: '#1976d2'}}>Sign in or create an account</h3>
-                    <form onSubmit={handleEmailPasswordSubmit} className="my-4">
+                    <form onSubmit={handleSubmit} className="my-4">
                         <h4 className="text-center" style={{color: '#6c757d'}}>Plese <span style={{color: '#1976d2'}}>{isLogIn ? 'Log In' : 'Register'}</span></h4>
                         {
                             !isLogIn && <div className="row mb-3">

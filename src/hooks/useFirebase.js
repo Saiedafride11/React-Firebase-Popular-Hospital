@@ -100,6 +100,7 @@ const handleToggleLogIn = (event) => {
   
   // Submit email & password
   const handleSubmit = (event) => {
+    event.preventDefault();
     if(password.length < 6){
       setError('Password Must be 6 characters long');
       setSuccessAccount('');
