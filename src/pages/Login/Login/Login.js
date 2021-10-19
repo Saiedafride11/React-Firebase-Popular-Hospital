@@ -6,7 +6,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGoogle, faFacebookSquare, faGithubSquare, faTwitterSquare} from '@fortawesome/free-brands-svg-icons'
 
 const Login = () => {
-    const {SignInUsingGoogle, SignInUsingFacebook, SignInUsingGithub, SignInUsingTwitter} = useAuth();
+    const { isLogIn, error, successAccount, successLogin,
+            SignInUsingGoogle,
+            SignInUsingFacebook,
+            SignInUsingGithub,
+            SignInUsingTwitter,
+            handleToggleLogIn,
+            handleNameBlur,
+            handleEmailBlur,
+            handlePasswordBlur,
+            handleSubmit,
+            handleResetPassword
+                        } = useAuth();
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home';
@@ -38,12 +49,66 @@ const Login = () => {
             history.push(redirect_uri);
           })
     }
+    const handleEmailPasswordSubmit = (event) => {
+        event.preventDefault();
+        history.push(redirect_uri);
+        handleSubmit();
+    }
     return (
-        <div className="login-container">
-            <div className="text-center">
-                <h2>Sign in or create an account</h2>
-                <input type="text" />
-                <p>--------- or use one option ---------</p>
+        <div className="login-container py-5">
+            <div className="">
+                <h3>Sign in or create an account</h3>
+                <form onSubmit={handleEmailPasswordSubmit} className="my-4">
+                    <h4 className="text-primary text-center">Plese {isLogIn ? 'Log In' : 'Register'}</h4>
+                    {
+                        !isLogIn && <div className="row mb-3">
+                            <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
+                            <div className="col-md-10 col-12">
+                                <input onBlur={handleNameBlur} type="text" id="name" className="form-control" placeholder="Your Name"/>
+                            </div>
+                        </div>
+                    }
+                    <div className="row mb-3">
+                        <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+                        <div className="col-md-10 col-12">
+                            <input onBlur={handleEmailBlur} type="email" className="form-control" id="inputEmail3" placeholder="Your Email" required/>
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <label htmlFor="inputPassword3" className="col-sm-2 col-form-label password">Password</label>
+                        <div className="col-md-10 col-12">
+                            <input onBlur={handlePasswordBlur} type="password" className="form-control" id="inputPassword3" placeholder="Your Password" required/>
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-sm-10 offset-sm-2">
+                            <div className="form-check">
+                                <input onChange={handleToggleLogIn} className="form-check-input" type="checkbox" id="gridCheck1"/>
+                                <label className="form-check-label" htmlFor="gridCheck1">
+                                    Already Registered?
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row mb-3 text-danger text-center">
+                        <span className="text-center">{error}</span>
+                        {   
+                            !isLogIn ?
+                            <span className="text-success">{successAccount}</span>
+                            :
+                            <span className="text-success">{successLogin}</span>
+                        }
+                    </div>
+                    <div className="text-center">
+                        <button type="submit" className="btn btn-primary">
+                            {isLogIn ? 'Log In' : 'Register'}
+                        </button>
+                        <br />
+                        <br />
+                        <button onClick={handleResetPassword} type="button" className="btn btn-secondary btn-sm">Reset Password</button>
+                    </div>
+                </form>
+                <p className="text-center">--------- or use one option ---------</p>
                 <div className="d-flex align-items-center justify-content-center">
                     <button onClick={handleGoogleLogin} className="social-icon">
                         <FontAwesomeIcon icon={faGoogle} />

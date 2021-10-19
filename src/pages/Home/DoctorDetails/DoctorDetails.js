@@ -39,8 +39,24 @@ const DoctorDetails = () => {
                             <p className="card-text"><strong>Location: </strong>{cart.location}</p>
                             <p className="card-text"><strong>Visit: </strong>{cart.visit}</p>
                             <small className="text-muted"><FontAwesomeIcon icon={faDotCircle} className="text-success"/>  {cart.active}</small>
-                            <button onClick={handleBookClick} className="btn btn-primary w-100">Book Now</button> 
+                            <button onClick={handleBookClick} className="btn btn-primary w-100 mt-2">Book Now</button> 
                         </div>
+                     </div>
+                     <div className="my-4">
+                        <h6>{cart.about}</h6>
+                        <p className="card-text">{cart.abourDes}</p>
+                     </div>
+                     <div className="my-4">
+                        <h6>{cart.education}</h6>
+                        <p className="card-text">{cart.educationDes}</p>
+                     </div>
+                     <div className="my-4">
+                        <h6>{cart.works}</h6>
+                        <p className="card-text">{cart.worksDes}</p>
+                     </div>
+                     <div className="my-4">
+                        <h6>{cart.awards}</h6>
+                        <p className="card-text">{cart.awardsDes}</p>
                      </div>
                 </div>
             )}

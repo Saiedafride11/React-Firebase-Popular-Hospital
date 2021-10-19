@@ -13,6 +13,7 @@ import Login from './pages/Login/Login/Login';
 import Services from './pages/Home/Services/Services';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import BlogDetails from './pages/Home/BlogDetails/BlogDetails';
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
                     </Route>
                     <Route path="/login">
                         <Login></Login>
+                    </Route>
+                    <Route path="/blog">
+                        <BlogDetails></BlogDetails>
                     </Route>
                     <Route path="*">
                         <NotFound></NotFound>

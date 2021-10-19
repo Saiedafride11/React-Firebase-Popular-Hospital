@@ -22,18 +22,18 @@ const Header = () => {
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             {   
                                 user?.displayName ? 
-                                <Button onClick={logOut} variant="light">LogOut</Button>
+                                <Button onClick={logOut} variant="light">LogOut</Button> 
                                 :
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                            }
+                            }&nbsp;&nbsp;
                             <Navbar.Text>
                                 {   
                                     user?.displayName ? 
-                                    ' Signed in as: '
+                                    ' Hello : '
                                     :
                                     ''
                                 }
-                                <a href="#login">{user?.displayName} </a>
+                                <span className="text-white">{user?.displayName}</span>
                             </Navbar.Text>
                         </Navbar.Collapse>
                     </Container>
