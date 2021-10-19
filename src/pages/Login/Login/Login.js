@@ -61,7 +61,7 @@ const Login = () => {
                 <div className="">
                     <h3 style={{color: '#1976d2'}}>Sign in or create an account</h3>
                     <form onSubmit={handleEmailPasswordSubmit} className="my-4">
-                        <h4 className="text-center" style={{color: '#6c757d'}}>Plese {isLogIn ? 'Log In' : 'Register'}</h4>
+                        <h4 className="text-center" style={{color: '#6c757d'}}>Plese <span style={{color: '#1976d2'}}>{isLogIn ? 'Log In' : 'Register'}</span></h4>
                         {
                             !isLogIn && <div className="row mb-3">
                                 <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
